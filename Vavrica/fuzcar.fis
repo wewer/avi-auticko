@@ -1,0 +1,62 @@
+[System]
+Name='fuzcar'
+Type='mamdani'
+Version=2.0
+NumInputs=5
+NumOutputs=2
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='lavy'
+Range=[-1 50]
+NumMFs=1
+MF1='mf1':'trimf',[-1 24.5 50]
+
+[Input2]
+Name='stredny'
+Range=[-1 50]
+NumMFs=1
+MF1='mf1':'trimf',[-1 24.5 50]
+
+[Input3]
+Name='pravy'
+Range=[-1 50]
+NumMFs=1
+MF1='mf1':'trimf',[-1 24.5 50]
+
+[Input4]
+Name='vzdialenost'
+Range=[0 2000]
+NumMFs=1
+MF1='daleko':'trimf',[-177.2 1990 2790]
+
+[Input5]
+Name='odchylka'
+Range=[-180 180]
+NumMFs=3
+MF1='dolava':'trimf',[-324 -180 -36]
+MF2='ziadna':'trimf',[-144 0 144]
+MF3='doprava':'trimf',[36 180 324]
+
+[Output1]
+Name='dv_r'
+Range=[0 50]
+NumMFs=1
+MF1='mf1':'trimf',[0.06614 49.55 74.5]
+
+[Output2]
+Name='dv_l'
+Range=[0 50]
+NumMFs=1
+MF1='mf1':'trimf',[0.1984 50.5 75.5]
+
+[Rules]
+0 0 0 1 0, 1 1 (1) : 2
+0 0 0 0 2, 1 1 (1) : 2
+0 0 0 0 1, 0 1 (1) : 2
+0 0 0 0 3, 1 0 (1) : 2

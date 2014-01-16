@@ -1,0 +1,54 @@
+[System]
+Name='fuzcar2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='vzdialenost'
+Range=[0 2000]
+NumMFs=1
+MF1='distance':'trimf',[0 2000 2000]
+
+[Input2]
+Name='odchylka'
+Range=[-180 180]
+NumMFs=3
+MF1='vlavo':'trimf',[-360 -180 0]
+MF2='0':'trimf',[-180 0 180]
+MF3='vpravo':'trimf',[0 180 360]
+
+[Output1]
+Name='dv_r'
+Range=[-1 1]
+NumMFs=3
+MF1='dozadu':'trapmf',[-1 -1 -0.4 -0.4]
+MF2='ziadne':'trapmf',[-0.4 -0.4 0.4 0.4]
+MF3='dopredu':'trapmf',[0.4 0.4 1 1]
+
+[Output2]
+Name='dv_l'
+Range=[-1 1]
+NumMFs=3
+MF1='dozadu':'trapmf',[-1 -1 -0.4 -0.4]
+MF2='ziadne':'trapmf',[-0.4 -0.4 0.4 0.4]
+MF3='dopredu':'trapmf',[0.4 0.4 1 1]
+
+[Rules]
+1 1, 3 3 (1) : 1
+1 2, 3 3 (1) : 1
+1 3, 3 3 (1) : 1
+1 1, 2 2 (1) : 1
+1 1, 3 3 (1) : 1
+1 2, 2 3 (1) : 1
+1 2, 2 2 (1) : 1
+1 2, 3 3 (1) : 1
+1 3, 2 2 (1) : 1
+1 3, 3 3 (1) : 1
