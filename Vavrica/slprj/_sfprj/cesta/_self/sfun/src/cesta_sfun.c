@@ -67,10 +67,10 @@ unsigned int sf_cesta_process_check_sum_call( int nlhs, mxArray * plhs[], int
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1242292659U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2003866270U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3569230205U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3470294331U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3044581279U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3610532482U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3161178043U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1989863240U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
@@ -97,10 +97,10 @@ unsigned int sf_cesta_process_check_sum_call( int nlhs, mxArray * plhs[], int
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3647378927U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1683855074U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(1596166423U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3924700633U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1017652220U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(2152071454U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3177289738U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(67808025U);
   }
 
   return 1;
@@ -138,7 +138,7 @@ unsigned int sf_cesta_autoinheritance_info( int nlhs, mxArray * plhs[], int nrhs
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(aiChksum, "sUTOmbrwRsErDCIcT581nC") == 0) {
+        if (strcmp(aiChksum, "5iJQYsnCCzoAkDniZDFNTE") == 0) {
           extern mxArray *sf_c1_cesta_get_autoinheritance_info(void);
           plhs[0] = sf_c1_cesta_get_autoinheritance_info();
           break;
@@ -230,7 +230,7 @@ unsigned int sf_cesta_third_party_uses_info( int nlhs, mxArray * plhs[], int
     switch (chartFileNumber) {
      case 1:
       {
-        if (strcmp(tpChksum, "qXPaZER1ZBPFBnUBdbbFQG") == 0) {
+        if (strcmp(tpChksum, "Z63hTMWuu2Un7vJQa9vOP") == 0) {
           extern mxArray *sf_c1_cesta_third_party_uses_info(void);
           plhs[0] = sf_c1_cesta_third_party_uses_info();
           break;

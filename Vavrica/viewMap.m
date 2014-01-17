@@ -60,7 +60,7 @@ function viewMap(u)
     %pohybujuce sa ref objekty-nie je dobry napad 
 %      set(refObjects(i),'XData',xData +absX);
 %      set(refObjects(i),'YData',yData +absY);
-%     pause(1);
+        %pause(0.01);
    end;
   
    

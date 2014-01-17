@@ -1,6 +1,7 @@
 clc
 clear
 close all;
+global map;
 map = genRandMap(100,100,50);
 fuzcar =  readfis('fuzcar');
 fuzcar2 =  readfis('fuzcar2');
@@ -22,6 +23,7 @@ fuzcar2 =  readfis('fuzcar2');
     %rozmery
     xSize=20;
     ySize=20;
+    global sensRange;
     sensRange = 100;
     
     angle = 45;
@@ -39,7 +41,7 @@ fuzcar2 =  readfis('fuzcar2');
    %pociatocne suradnice auticka
    global refAuto;
    refAuto=patch([posx-xSize/2 posx+xSize/2 posx+xSize/2 posx-xSize/2], [posy-ySize/2 posy-ySize/2 posy+ySize/2 posy+ySize/2], 'green');
-   set(refAuto,'Visible','on');
+   set(refAuto,'Visible','off');
    
    %objekt ktory sa bude hybat
    global auto;
@@ -49,18 +51,22 @@ fuzcar2 =  readfis('fuzcar2');
    %kuzely
    global k1;
    k1 = patch ([posx p1(1) p2(1) posx],[posy p1(2) p2(2) posy],'blue');
+   alpha(k1,0.5);
+   
    global refK1;
    refK1 = patch ([posx p1(1) p2(1) posx],[posy p1(2) p2(2) posy],'blue');
    set(refK1,'Visible','off');
    
    global k2;
    k2= patch ([posx p2(1) p3(1) posx],[posy p2(2) p3(2) posy],'blue');
+   alpha(k2,0.5);
    global refK2;
    refK2= patch ([posx p2(1) p3(1) posx],[posy p2(2) p3(2) posy],'blue');
     set(refK2,'Visible','off');
    
    global k3;
    k3 = patch ([posx p3(1) p4(1) posx],[posy p3(2) p4(2) posy],'blue');
+   alpha(k3,0.5);
    global refK3;
    refK3 = patch ([posx p3(1) p4(1) posx],[posy p3(2) p4(2) posy],'blue');
     set(refK3,'Visible','off');
